@@ -21,9 +21,25 @@
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 document.addEventListener('deviceready', onDeviceReady, false);
 
+function updateStatus(aStatus) {
+    document.getElementById('status').innerText = aStatus;
+}
+
+function printIntent(aIntent) {
+    let intentExtras = aIntent.extras;
+    if (intentExtras == null)
+        intentExtras = "No extras in intent";
+    updateStatus('Action: ' + JSON.stringify(aIntent.action) +
+        '\nData: ' + JSON.stringify(aIntent.data) +
+        '\nExtras: ' + JSON.stringify(intentExtras));
+}
+
 function onDeviceReady() {
     // Cordova is now initialized. Have fun!
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+    window.plugins.intentShim.onIntent(intent => printIntent(intent));
+    window.plugins.intentShim.getIntent(intent => printIntent(intent),
+        () => updateStatus('Error getting launch intent'));
     document.getElementById('deviceready').classList.add('ready');
 }
