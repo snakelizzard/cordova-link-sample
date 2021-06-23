@@ -14,17 +14,21 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "devDependencies": {
-    "com-darryncampbell-cordova-plugin-intent": "^2.0.0",
     "cordova-android": "^9.1.0",
     "cordova-plugin-whitelist": "^1.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:snakelizzard/link-sample.git"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "com-darryncampbell-cordova-plugin-intent": {}
+      "cordova-plugin-intent": {}
     },
-    "platforms": [
-      "android"
-    ]
+    "platforms": []
+  },
+  "dependencies": {
+    "simple-cordova-plugin-intent": "github:snakelizzard/cordova-plugin-intent"
   }
 }
