@@ -5,7 +5,7 @@
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
   "scripts": {
-    "run": "cordova run android",
+    "run": "cordova run android --buildConfig build.json",
     "test": "$ANDROID_SDK_ROOT/platform-tools/adb shell am start -W -a android.intent.action.VIEW -d \"example://test.com/android/link/test\" io.cordova.hellocordova"
   },
   "keywords": [
