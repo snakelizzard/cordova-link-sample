@@ -12,9 +12,9 @@
             "keystore": "keystore",
             "storePassword": "android",
             "alias": "androiddebugkey",
-            "password" : "",
+            "password" : "android",
             "keystoreType": "",
-            "packageType": "bundle"
+            "packageType": "apk"
         }
     }
 }
